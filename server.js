@@ -199,7 +199,7 @@ app.get('/', (req,res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
-http.listen(process.env.PORT || 3070, function () {
-  console.log('listening on *:' + process.env.PORT || 3070);
+http.listen(process.env.PORT || 3070,  ()=> {
+  console.log('listening on *:' + this.address().PORT,app.settings.env);
 
 });

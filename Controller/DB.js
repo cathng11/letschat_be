@@ -3,7 +3,6 @@ var mysql = require('mysql');
 const dbRoute = express.Router();
 
 var con = mysql.createConnection({
-    host: 'localhost',
     user: 'root',
     password: '',
     database: 'chat',
