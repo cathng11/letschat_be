@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "LetsChat app",
+  "engines": {
+    "node": "12.16.3"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build":"webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "ng build --prod"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dateformat": "^4.2.2",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "socket.io": "^3.0.3",
+    "nodemon": "^2.0.6"
+  }
+}
