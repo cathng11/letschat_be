@@ -200,6 +200,6 @@ app.get('/', (req,res) => {
 });
 
 http.listen(process.env.PORT || 3070,  ()=> {
-  console.log('listening on *:' + this.address().PORT,app.settings.env);
+  console.log('listening on *:' + port);
 
 });
