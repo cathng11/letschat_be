@@ -1,18 +1,18 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "LetsChat app",
+  "description": "",
   "engines": {
-    "node": "12.16.3"
+    "node": "12.18.3",
+    "npm":"6.14.6"
   },
   "main": "server.js",
   "scripts": {
-    "ng": "ng",
+    "heroku-postbuild": "npm run build",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "ng build",
-    "postinstall": "ng build --prod",
-    "heroku-postbuild": "ng build --prod"
+    "build":"webpack",
+    "dev": "nodemon ./server.js localhost 3070"
   },
   "author": "",
   "license": "ISC",
@@ -23,5 +23,6 @@
     "mysql": "^2.18.1",
     "socket.io": "^3.0.3",
     "nodemon": "^2.0.6"
+
   }
 }
