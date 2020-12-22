@@ -4,14 +4,13 @@
   "description": "",
   "engines": {
     "node": "12.18.3",
-    "npm":"6.14.6"
+    "npm": "6.14.6"
   },
   "main": "server.js",
   "scripts": {
     "heroku-postbuild": "npm run build",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"webpack",
     "dev": "nodemon ./server.js localhost 3070"
   },
   "author": "",
@@ -23,6 +22,5 @@
     "mysql": "^2.18.1",
     "socket.io": "^3.0.3",
     "nodemon": "^2.0.6"
-
   }
 }
