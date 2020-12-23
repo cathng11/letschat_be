@@ -12,7 +12,7 @@ router.route('/add')
                     if (err) throw err;
                 })
                 if(i===Object.keys(req.body.list).length-1)
-                res.send({result:'Create group successfully'})
+                    res.send({result:'Create group successfully'})
             }
         })
     })

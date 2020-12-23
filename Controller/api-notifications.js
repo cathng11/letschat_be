@@ -26,6 +26,7 @@ noti.route('/read').post((req, res) => {
     con.connect(function (err) {
         var sql = `update tbl_friend set IsRead = 0 where ID_Sender = '${req.body.username}' and IsRead = 1`;
         con.query(sql);
+        res.send({result: "done"});
     });
 });
 

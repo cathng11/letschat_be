@@ -44,6 +44,7 @@ login.route('/logout').post((req, res) => {
     con.connect(function (err) {
         var sql = `update tbl_onlineuser set Time_Offline = '${req.body.time}' where Username = '${req.body.username}'`;
         con.query(sql);
+        res.send({result: "done"});
     });
 });
 
