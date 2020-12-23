@@ -4,6 +4,7 @@ const express = require('express'),
   port = process.env.PORT || 3070;
 const path = require('path');
 const http = require('http').createServer(app);
+const cors=require('cors');
 const io = require('socket.io')(http, {
   cors: {
     origin: '*',
@@ -22,14 +23,15 @@ function getRandomInt(max) {
 };
 
 //enable cors
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
-  next();
-});
-
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//   // res.header("Access-Control-Allow-Headers", "Content-Type");
+//   res.header("Access-Control-Allow-Headers", "Authorization");
+//   res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
+//   next();
+// });
+app.use(cors());
 //Socket
 io.on('connection', function (socket) {
   socket.on('joinRoom', (idRoom) => {
