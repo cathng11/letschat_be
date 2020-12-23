@@ -23,6 +23,7 @@ messages.route('/add').post((req, res) => {
         con.query(sqlLastestMess);
         var sqlInsert = `insert into tbl_messages values ('${random_id}' , '${req.body.username}', '${req.body.idRoom}', '${req.body.message}', '${req.body.time}', 0)`;
         con.query(sqlInsert);
+        res.send({result: "done"});
     });
 });
 
