@@ -3,10 +3,11 @@ var mysql = require('mysql');
 const dbRoute = express.Router();
 
 var con = mysql.createConnection({
-  host: 'sql12.freemysqlhosting.net',
-  user: 'sql12383475',
-  password: '2ufy78fXcA',
-  database: 'sql12383475',
+  host: 'freedb.tech',
+  port:3306,
+  user: 'freedbtech_cathng11',
+  password: 'nguyenhavinh',
+  database: 'freedbtech_letschat',
   dateStrings: true,
   charset : 'utf8mb4'
 });
