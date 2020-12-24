@@ -57,6 +57,7 @@ io.on('connection', function (socket) {
   });
 
   socket.on('reloadHeader', (data) => {
+    console.log(data);
     io.to(data).emit('to-friend-reloadHeader','');
   });
   socket.on('unfriend',(data)=>
