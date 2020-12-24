@@ -26,7 +26,7 @@ router.route('/update')
 router.route('/updatePass')
     .post((req, res) => {
         console.log('api/user/updatePass called!!!!');
-        //var sql = "SELECT * FROM tbl_user WHERE Username='" + req.body.username + "' AND Password='" + req.body.oldpass + "'";
+        //var sql = "SELECT  * FROM tbl_user WHERE Username='" + req.body.username + "' AND Password='" + req.body.oldpass + "'";
         var sql = "SELECT * FROM tbl_user WHERE Username='" + req.body.username + "'";
         conn.query(sql, function (err, results) {
             // if (!results[0]) res.json({ result: "Old password is incorrect" });
