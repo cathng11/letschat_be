@@ -26,7 +26,7 @@ router.route('')
           var existPhone = JSON.parse(JSON.stringify(results));
           if (Object.keys(existPhone).length==0) {
             var register = "INSERT INTO tbl_user VALUES ('"
-              + user.username + "','" + hashPassword + "','','','1970-01-01','" + user.phone + "','','','','',0)";
+              + user.username + "','" + hashPassword + "','Firstname','','1970-01-01','" + user.phone + "','','','','',0)";
             conn.query(register, function (err, results) {
               if (err) throw err;
               if(results.affectedRows)
