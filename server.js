@@ -63,9 +63,9 @@ io.on('connection', function (socket) {
   socket.on('unfriend',(data)=>
   {
     var sql = `DELETE FROM tbl_friend WHERE ID_FriendRequest IN 
-    (SELECT tbl_friend.ID_FriendRequest FROM tbl_friend WHERE ID_Sender='${data.user}' AND ID_Receiver='${data.friend}'
+    (SELECT ID_FriendRequest FROM (select * from tbl_friend) as fr WHERE ID_Sender='${data.user}' AND ID_Receiver='${data.friend}'
     UNION
-    SELECT tbl_friend.ID_FriendRequest FROM tbl_friend WHERE ID_Sender='${data.friend}' AND ID_Receiver='${data.user}')`;
+    SELECT ID_FriendRequest FROM (select * from tbl_friend) as fr WHERE ID_Sender='${data.friend}' AND ID_Receiver='${data.user}')`;
     conn.query(sql,function(err,result){
       if(err) throw err;
       if(result.affectedRows)
