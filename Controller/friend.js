@@ -30,9 +30,9 @@ router.route('/add')
     .post((req, res) => {
         console.log('api/friend/add called!!!!');
         var del = `DELETE FROM tbl_participants WHERE ID_Par IN 
-        (SELECT tbl_participants.ID_Par FROM tbl_participants WHERE ID_Room='${req.body.sender}-${req.body.receiver}_temp' 
+        (SELECT ID_Par FROM (select * from tbl_participants) as pars WHERE ID_Room='${req.body.sender}-${req.body.receiver}_temp' 
         UNION 
-        SELECT tbl_participants.ID_Par FROM tbl_participants WHERE ID_Room='${req.body.receiver}-${req.body.sender}_temp')`
+        SELECT ID_Par FROM (select * from tbl_participants) as pars WHERE ID_Room='${req.body.receiver}-${req.body.sender}_temp')`
         conn.query(del);
         var sql = "INSERT INTO tbl_friend VALUES ('" + getRandomInt(99999) + "','" + req.body.sender + "','" + req.body.receiver + "',1,'" + req.body.time + "',1)";
         conn.query(sql, function (err, results) {
