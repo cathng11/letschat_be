@@ -11,7 +11,7 @@
     "heroku-postbuild": "npm run build",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./server.js https://letschat-bb.herokuapp.com/"
+    "dev": "nodemon ./server.js http://localhost:3070/"
   },
   "author": "",
   "license": "ISC",
